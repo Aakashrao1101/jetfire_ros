@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<robot name="firebird" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find firebird_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find firebird_description)/urdf/firebird.trans" />
+<xacro:include filename="$(find firebird_description)/urdf/firebird.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.014472647409419863 -5.858984262936555e-06 0.02936840860887686"/>
+    <mass value="2"/>
+    <inertia ixx="0.001356" ixy="-0.0" ixz="-0.00019" iyy="0.001312" iyz="0.0" izz="0.001526"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://firebird_description/meshes/base_link.stl" scale="1 1 1"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://firebird_description/meshes/base_link.stl" scale="1 1 1"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="4.439504319719845e-14 -0.004446641576205876 3.469446951953614e-18"/>
+    <mass value="0.01933021152331733"/>
+    <inertia ixx="3e-06" ixy="-0.0" ixz="0.0" iyy="6e-06" iyz="-0.0" izz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.04 0.069915 0.006"/>
+    <geometry>
+      <mesh filename="package://firebird_description/meshes/right_wheel_1.stl" scale="1 1 1"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.04 0.069915 0.006"/>
+    <geometry>
+      <mesh filename="package://firebird_description/meshes/right_wheel_1.stl" scale="1 1 1"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="4.439504319719845e-14 0.004446641576205876 -6.071532165918825e-18"/>
+    <mass value="0.01933021152331733"/>
+    <inertia ixx="3e-06" ixy="0.0" ixz="-0.0" iyy="6e-06" iyz="-0.0" izz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.04 -0.069915 0.006"/>
+    <geometry>
+      <mesh filename="package://firebird_description/meshes/left_wheel_1.stl" scale="1 1 1"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.04 -0.069915 0.006"/>
+    <geometry>
+      <mesh filename="package://firebird_description/meshes/left_wheel_1.stl" scale="1 1 1"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-7.84233789019595e-13 4.213519037308031e-17 -0.006718750000000044"/>
+    <mass value="0.002827433388230721"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.069 -0.0 0.016"/>
+    <geometry>
+      <mesh filename="package://firebird_description/meshes/caster_wheel_1.stl" scale="1 1 1"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.069 -0.0 0.016"/>
+    <geometry>
+      <mesh filename="package://firebird_description/meshes/caster_wheel_1.stl" scale="1 1 1"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="laser_frame">
+  <inertial>
+    <origin rpy="0 0 0" xyz="5.960464413701239e-10 1.862645121475383e-11 0.014606571716925011"/>
+    <mass value="0.19912725963937622"/>
+    <inertia ixx="0.000114" ixy="-0.0" ixz="0.0" iyy="0.000114" iyz="-0.0" izz="0.000199"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.035 -0.0 -0.051"/>
+    <geometry>
+      <mesh filename="package://firebird_description/meshes/Component5_1.stl" scale="1 1 1"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.035 -0.0 -0.051"/>
+    <geometry>
+      <mesh filename="package://firebird_description/meshes/Component5_1.stl" scale="1 1 1"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="stereo_cam_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.004933891825893098 -6.499104466206011e-14 0.0"/>
+    <mass value="0.008113974609440668"/>
+    <inertia ixx="2e-06" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.019 -0.0 -0.0975"/>
+    <geometry>
+      <mesh filename="package://firebird_description/meshes/stereo_cam_1.stl" scale="1 1 1"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.019 -0.0 -0.0975"/>
+    <geometry>
+      <mesh filename="package://firebird_description/meshes/stereo_cam_1.stl" scale="1 1 1"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="right_wheel_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.04 -0.069915 -0.006"/>
+  <parent link="base_link"/>
+  <child link="right_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="left_wheel_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.04 0.069915 -0.006"/>
+  <parent link="base_link"/>
+  <child link="left_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="caster_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.069 0.0 -0.016"/>
+  <parent link="base_link"/>
+  <child link="caster_wheel_1"/>
+</joint>
+
+<joint name="lidar_joint" type="fixed">
+  <origin rpy="0 0 3.14" xyz="0.035 0.0 0.051"/>
+  <parent link="base_link"/>
+  <child link="laser_frame"/>
+</joint>
+
+<joint name="stereo_cam_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.019 0.0 0.0975"/>
+  <parent link="base_link"/>
+  <child link="stereo_cam_1"/>
+</joint>
+
+</robot>

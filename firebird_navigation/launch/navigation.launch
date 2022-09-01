@@ -1,0 +1,13 @@
+<launch>
+  
+  <!-- Start simulation env -->
+  <!-- <include file="$(find firebird_simulation)/launch/house_simulation.launch" /> -->
+
+  <include file="$(find firebird_navigation)/launch/laserscan_angle_bounds_filter.launch" />
+
+  <!-- start the move_base and run amcl node -->
+  <include file="$(find firebird_navigation)/launch/move_base.launch" />
+
+  <!-- Start rviz -->
+  <include file="$(find firebird_description)/launch/display.launch" />
+</launch>
